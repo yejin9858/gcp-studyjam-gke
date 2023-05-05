@@ -1,7 +1,7 @@
 # gcp-studyjam-gke
 ### 구글 클라우드 스터디잼 쿠버네티스 입문
 ---
-| 강의 제목 | 링크 |
+| 강의 제목 | 정리 |
 |-------------------------------------------------------|----------|
 | Introduction to Docker |  [링크](https://github.com/yejin9858/gcp-studyjam-gke/tree/main/Introduction%20to%20Docker/) |
 | Kubernetes Engine: Qwik Start |  [링크](https://github.com/yejin9858/gcp-studyjam-gke/tree/main/Kubernetes%20Engine:%20Qwik%20Start/) |
