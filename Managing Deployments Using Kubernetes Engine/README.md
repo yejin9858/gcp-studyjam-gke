@@ -61,13 +61,13 @@ spec:
 
 위 yml 적용한 deployments를 백포 객체로 만들고, 생성 여부 확인한다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/516be395-94da-4eac-a971-afcec26e37a2/Untitled.png)
+![image](https://github.com/yejin9858/gcp-studyjam-gke/assets/63632349/de8b1ca7-06bd-4884-8d8f-4bab6766a5c4)
 
 각각의 포트 연결 코드가 들어있는 frontend.yaml, hello.yaml도 배포를 만들고 노출한다.
 
 확인
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a76ddda7-3392-4e92-8cfd-53492c004f81/Untitled.png)
+![image](https://github.com/yejin9858/gcp-studyjam-gke/assets/63632349/8aa27321-3e85-4139-9d41-154c30476f2a)
 
 ```yaml
 curl -ks https://kubectl get svc frontend -o=jsonpath="{.status.loadBalancer.ingress[0].ip}"`
@@ -75,11 +75,11 @@ curl -ks https://kubectl get svc frontend -o=jsonpath="{.status.loadBalancer.ing
 
 ⇒ Kubernetes 클러스터에서 "frontend"라는 Service를 조회하고, Service의 LoadBalancer의 IP 주소(아마 EXTERNAL-IP)를 JSON 경로(**`jsonpath`**)를 사용하여 추출, 그 걸로 curl명령어 실행
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2e254a07-0b6a-4e04-a2ce-dde8c99c02dd/Untitled.png)
+![image](https://github.com/yejin9858/gcp-studyjam-gke/assets/63632349/4d286ebe-b87b-46ac-9340-acddd00739df)
 
 replica 개수는 쉽게 scaling이 가능하다. 
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/48755af2-6cd3-4aee-9eb1-a54d82eb13e9/Untitled.png)
+![image](https://github.com/yejin9858/gcp-studyjam-gke/assets/63632349/e34725e6-fe8e-425f-b28a-f6878174e872)
 
 (확인 결과 yaml 파일의 코드가 바뀌는 것은 아님.)
 
@@ -89,7 +89,7 @@ replica 개수는 쉽게 scaling이 가능하다.
 
 배포가 새 버전으로 업데이트 됨 → 세 버전의 replica set이 만들어짐 → 이전 replica set의 복제본 개수 감소하면서 새 버전의 replica set의 복제본 수 천천히 증가
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4ca02878-3b9c-4640-84a5-e0aab71dfbfc/Untitled.png)
+![image](https://github.com/yejin9858/gcp-studyjam-gke/assets/63632349/b8192bcf-9c37-4346-952a-e446ba94c389)
 
 - 롤링 업데이트 트리거하기(**Trigger a rolling update)**
     - image의 버전을 변경하고 저장하면 `kubectl get replicaset`  명령어 수행시 실시간으로 업데이트 된 버전의 replica set 으로 업데이트 되는 것을 볼 수 있음
@@ -121,7 +121,7 @@ replica 개수는 쉽게 scaling이 가능하다.
 
 ## ****Task 4. Canary deployments****
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1e1b5907-9f7d-42a7-9bd7-89953472d994/Untitled.png)
+![image](https://github.com/yejin9858/gcp-studyjam-gke/assets/63632349/4d6833a3-d61d-4e93-9e64-d8154b0d7fc4)
 
 배포 시 두개의 클론을 생성한다. 
 
@@ -155,7 +155,7 @@ spec:
 
 롤링 업데이트 :최소한의 오버헤드, 성능 영향, 다운타임 으로 애플리케이션을 배포할 수 있어서 좋다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/35d63d91-78d2-40e6-8867-024dca8ed9a4/Untitled.png)
+![image](https://github.com/yejin9858/gcp-studyjam-gke/assets/63632349/ed090bbc-1fb8-4d63-b893-47dc5619eea0)
 
 하지만.  배포를 모두 완료한 후에 로드밸런서를 수정하여 새 버전을 가리키도록 하는 것이 유리한 경우가 있다. ( ex) 서비스 중단 없는 배포 등)리소스가 2배로 든다는 것이 단점이다.
 
