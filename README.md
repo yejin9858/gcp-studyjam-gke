@@ -6,5 +6,5 @@
 | Introduction to Docker |  [링크](https://github.com/yejin9858/gcp-studyjam-gke/tree/main/Introduction%20to%20Docker/) |
 | Kubernetes Engine: Qwik Start |  [링크](https://github.com/yejin9858/gcp-studyjam-gke/tree/main/Kubernetes%20Engine:%20Qwik%20Start/) |
 | Orchestrating the Cloud with Kubernetes |  [링크](https://github.com/yejin9858/gcp-studyjam-gke/tree/main/Orchestrating%20the%20Cloud%20with%20Kubernetes) |
-| Managing Deployments Using Kubernetes Engine | 링크 |
-| Continuous Delivery with Jenkins in Kubernetes Engine | 링크 |
+| Managing Deployments Using Kubernetes Engine | [링크](https://github.com/yejin9858/gcp-studyjam-gke/tree/main/Managing%20Deployments%20Using%20Kubernetes%20Engine) |
+| Continuous Delivery with Jenkins in Kubernetes Engine | [링크](https://github.com/yejin9858/gcp-studyjam-gke/tree/main/Continuous%20Delivery%20with%20Jenkins%20in%20Kubernetes%20Engine) |
